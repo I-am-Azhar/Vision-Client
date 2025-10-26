@@ -1,0 +1,147 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Hero Section Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.8s ease-out;
+}
+
+/* Pulse animation for badge */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Button hover effects */
+button:hover {
+  transform: translateY(-2px);
+}
+
+button {
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Star Animation for Testimonials */
+@keyframes starFloat {
+  0%, 100% {
+    opacity: 0.3;
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: translateY(-15px) scale(1.1);
+  }
+}
+
+@keyframes starGlow {
+  0%, 100% {
+    filter: drop-shadow(0 0 5px currentColor);
+  }
+  50% {
+    filter: drop-shadow(0 0 15px currentColor);
+  }
+}
+
+.star {
+  position: absolute;
+  font-size: 1.5rem;
+  animation: starFloat 4s ease-in-out infinite, starGlow 3s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.star-1 {
+  top: 10%;
+  left: 15%;
+  animation-delay: 0s;
+}
+
+.star-2 {
+  top: 20%;
+  right: 20%;
+  animation-delay: 1s;
+}
+
+.star-3 {
+  bottom: 15%;
+  left: 25%;
+  animation-delay: 0.5s;
+}
+
+.star-4 {
+  top: 5%;
+  right: 15%;
+  animation-delay: 1.5s;
+}
+
+.star-5 {
+  bottom: 10%;
+  right: 30%;
+  animation-delay: 0.8s;
+}
+
+.star-6 {
+  top: 50%;
+  left: 5%;
+  animation-delay: 1.2s;
+}
+
+.star-7 {
+  top: 45%;
+  right: 5%;
+  animation-delay: 1.8s;
+}
+
+.star-8 {
+  bottom: 30%;
+  left: 40%;
+  animation-delay: 1.3s;
+}
+
+.star-9 {
+  top: 25%;
+  left: 50%;
+  animation-delay: 2.2s;
+}
+
+@media (max-width: 768px) {
+  .star {
+    font-size: 1.2rem;
+  }
+}
