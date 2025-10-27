@@ -6,9 +6,10 @@ function StudyWorkOpportunities() {
       <div className="max-w-7xl mx-auto">
         {/* Section Heading */}
         <ScrollSlide direction="up" delay={0}>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-12">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-12">
+            <span className="text-white">Turn Your German </span>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-yellow-500">
-              Turn Your German Dream into Reality
+              Dream into Reality
             </span>
           </h2>
         </ScrollSlide>
@@ -20,11 +21,14 @@ function StudyWorkOpportunities() {
             <div className="p-6 md:p-8 rounded-lg border border-gray-700/30 bg-gray-900/20 backdrop-blur-sm hover:border-gray-600/40 transition-colors">
             <div className="flex items-center gap-4 mb-4">
               <span className="text-4xl">🎓</span>
-              <h3 className="text-2xl md:text-3xl font-semibold text-white">
-                Study in Germany
+              <h3 className="text-2xl md:text-3xl font-semibold">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-yellow-500">
+                  Study
+                </span>
+                <span className="text-white"> in Germany</span>
               </h3>
             </div>
-            <p className="text-gray-300 text-lg mb-3 font-medium ml-4">
+            <p className="text-gray-300 text-lg mb-3 font-medium ml-4 whitespace-nowrap">
               Bachelor's / Master's in Top Universities
             </p>
             <ul className="text-gray-400 space-y-2 ml-12">
@@ -41,8 +45,11 @@ function StudyWorkOpportunities() {
             <div className="p-6 md:p-8 rounded-lg border border-gray-700/30 bg-gray-900/20 backdrop-blur-sm hover:border-gray-600/40 transition-colors">
             <div className="flex items-center gap-4 mb-4">
               <span className="text-4xl">💼</span>
-              <h3 className="text-2xl md:text-3xl font-semibold text-white">
-                Work in Germany
+              <h3 className="text-2xl md:text-3xl font-semibold">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-yellow-500">
+                  Work
+                </span>
+                <span className="text-white"> in Germany</span>
               </h3>
             </div>
             <p className="text-gray-300 text-lg mb-3 font-medium ml-4">
@@ -60,7 +67,7 @@ function StudyWorkOpportunities() {
 
         {/* Highlight Line */}
         <ScrollSlide direction="up" delay={0.3}>
-          <p className="text-center text-base md:text-lg text-white/60 mb-8 font-medium">
+          <p className="hidden md:block text-center text-base md:text-lg text-white/60 mb-8 font-medium">
             Start your journey with a 1-Year Visa ⟶ extendable up to 5 years.
           </p>
         </ScrollSlide>
@@ -68,8 +75,9 @@ function StudyWorkOpportunities() {
         {/* WhatsApp CTA Button */}
         <ScrollSlide direction="up" delay={0.4}>
           <div className="flex justify-center">
-            <button className="w-full sm:w-auto px-6 py-3 md:px-8 md:py-4 text-base md:text-lg font-semibold text-white bg-green-600 hover:bg-green-700 rounded-lg transition-colors duration-200 shadow-lg">
-              💬 Message Us on WhatsApp to Start Your Process
+            <button className="w-auto max-w-[90%] sm:w-auto px-6 py-3 md:px-8 md:py-4 text-sm sm:text-base md:text-lg font-semibold text-white bg-green-600 hover:bg-green-700 rounded-lg transition-colors duration-200 shadow-lg whitespace-nowrap">
+              <span className="sm:hidden">💬 WhatsApp Us</span>
+              <span className="hidden sm:inline">💬 Message Us on WhatsApp to Start Your Process</span>
             </button>
           </div>
         </ScrollSlide>

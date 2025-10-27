@@ -63,8 +63,9 @@ function WhyGermany() {
         <ScrollFade delay={getMobileDelay(0)}>
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-center mb-10 lg:mb-16">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-yellow-500">
-              Why Germany?
+              Why
             </span>
+            <span className="text-white"> Germany?</span>
           </h2>
         </ScrollFade>
 

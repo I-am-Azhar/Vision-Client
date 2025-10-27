@@ -7,7 +7,7 @@ function LearnGerman() {
   const levels = [
     {
       name: "A1 – Beginner",
-      badges: ["Vocabulary", "Grammar", "Pronunciation"],
+      badges: ["Words", "Grammar", "Speaking"],
       description: "Start your German journey with basic vocabulary and essential phrases.",
     },
     {
@@ -17,12 +17,12 @@ function LearnGerman() {
     },
     {
       name: "B1 – Intermediate",
-      badges: ["Business German", "Advanced Grammar", "Cultural Context"],
+      badges: ["Business", "Grammar", "Culture"],
       description: "Master professional communication and complex grammatical structures.",
     },
     {
       name: "B2 – Advanced",
-      badges: ["Fluency", "Native Expressions", "Academic German"],
+      badges: ["Fluency", "Expressions", "Academic"],
       description: "Achieve near-native fluency for work, study, and daily life in Germany.",
     },
   ];
@@ -34,18 +34,22 @@ function LearnGerman() {
   };
 
   return (
-    <ScrollSection className="py-20 px-4 relative">
+    <ScrollSection className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 relative">
       <div className="max-w-7xl mx-auto">
         {/* Section Heading */}
         <ScrollFade>
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-yellow-500">
-                Learn German — A1 to B2 Levels
-              </span>
+          <div className="text-center mb-6 md:mb-8 lg:mb-12 px-4 sm:px-0">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+              <div className="block md:inline">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-yellow-500">
+                  Learn German
+                </span>
+                <span className="text-white"> —</span>
+              </div>
+              <span className="block md:inline text-white ml-0 md:ml-2"> A1 to B2 Levels</span>
             </h2>
-            <p className="text-lg md:text-xl text-white/90">
-              Certified Trainers • Fast-Track Courses • 100% Visa Oriented
+            <p className="text-base md:text-lg lg:text-xl text-white/60">
+              Certified Trainers • Fast-Track Courses<br className="sm:hidden" /> 100% Visa Oriented
             </p>
           </div>
         </ScrollFade>
@@ -62,10 +66,10 @@ function LearnGerman() {
                 borderColor="rgba(107, 114, 128, 0.5)"
                 borderRadius="16px"
                 glareColor="#ffffff"
-                glareOpacity={0.3}
+                glareOpacity={0.2}
                 glareAngle={-30}
-                glareSize={300}
-                transitionDuration={800}
+                glareSize={250}
+                transitionDuration={600}
                 playOnce={false}
                 style={{
                   backdropFilter: "blur(12px)",
@@ -73,41 +77,28 @@ function LearnGerman() {
                     "0 8px 32px rgba(0, 0, 0, 0.3), inset 0 0 60px rgba(251, 146, 60, 0.1), inset 0 0 40px rgba(234, 179, 8, 0.05)",
                 }}
               >
-                <div className="flex flex-col h-full p-8 md:p-10">
+                <div className="flex flex-col h-full p-6 sm:p-7 md:p-8 lg:p-10">
                   {/* Level Name - Single Line */}
-                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-8 text-center md:text-left">
-                    <span className="text-3xl md:text-4xl">{level.name.split(' – ')[0]}</span>
-                    <span className="text-xl md:text-2xl text-white/60"> – {level.name.split(' – ')[1]}</span>
+                  <h3 className="text-2xl sm:text-2xl md:text-2xl lg:text-3xl font-bold mb-6 md:mb-8 text-center md:text-left whitespace-nowrap">
+                    <span className="text-3xl sm:text-3xl md:text-3xl lg:text-4xl text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-yellow-500">{level.name.split(' – ')[0]}</span>
+                    <span className="text-lg sm:text-xl md:text-xl lg:text-2xl text-white/60"> – {level.name.split(' – ')[1]}</span>
                   </h3>
 
-                  {/* Badges - 2 in first line, 1 in second line */}
-                  <div className="flex flex-col gap-2 mb-8">
-                    {/* First Row - First 2 badges */}
-                    <div className="flex gap-2">
-                      {level.badges.slice(0, 2).map((badge, badgeIndex) => (
-                        <Badge
-                          key={badgeIndex}
-                          variant="outline"
-                          className="text-xs md:text-xs py-1.5 px-2 flex-1 text-center whitespace-nowrap"
-                        >
-                          {badge}
-                        </Badge>
-                      ))}
-                    </div>
-                    {/* Second Row - 3rd badge */}
-                    <div className="flex justify-center">
+                  {/* Badges - All 3 in one row on all screen sizes */}
+                  <div className="flex flex-wrap gap-1.5 sm:gap-2 md:gap-1.5 mb-6 md:mb-8 justify-center md:justify-start">
+                    {level.badges.map((badge, badgeIndex) => (
                       <Badge
-                        key={level.badges[2]}
+                        key={badgeIndex}
                         variant="outline"
-                        className="text-xs md:text-xs py-1.5 px-2 flex-initial text-center whitespace-nowrap"
+                        className="text-xs sm:text-sm md:text-[10px] lg:text-xs py-1 px-2 sm:py-1.5 sm:px-2 md:py-1 md:px-1 lg:px-1.5 w-auto text-center whitespace-nowrap"
                       >
-                        {level.badges[2]}
+                        {badge}
                       </Badge>
-                    </div>
+                    ))}
                   </div>
 
                   {/* Description */}
-                  <p className="text-sm md:text-base text-white/70 mb-8 flex-grow leading-relaxed text-center">
+                  <p className="text-sm sm:text-base text-white/70 mb-6 md:mb-8 flex-grow leading-relaxed text-left sm:text-center">
                     {level.description}
                   </p>
 
@@ -116,7 +107,7 @@ function LearnGerman() {
                     onClick={() => handleEnroll(level.name)}
                     variant="default"
                     size="default"
-                    className="w-full bg-green-600 hover:bg-green-700 text-white py-6 text-base md:text-lg font-semibold"
+                    className="w-auto bg-green-600 hover:bg-green-700 text-white py-3 sm:py-4 md:py-6 px-6 sm:px-8 md:px-10 text-sm sm:text-base md:text-lg font-semibold mx-auto md:mx-0"
                   >
                     Enroll Now
                   </Button>

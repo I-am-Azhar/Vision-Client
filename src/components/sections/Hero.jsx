@@ -87,8 +87,8 @@ function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/90 mb-2 px-2">
-            No IELTS • Work from Day 1 • Age 22–45 • 1-Year Extendable Visa
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/60 mb-2 px-2">
+            No IELTS • Work from Day 1<br className="sm:hidden" /> Age 22–45 • 1-Year Extendable Visa
           </p>
           <div className="w-20 sm:w-24 md:w-32 h-0.5 mx-auto bg-gradient-to-r from-transparent via-orange-500 to-transparent"></div>
         </motion.div>
