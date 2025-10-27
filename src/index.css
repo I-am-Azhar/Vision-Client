@@ -144,4 +144,40 @@ button {
   .star {
     font-size: 1.2rem;
   }
+  
+  /* Reposition stars to avoid text overlap on mobile */
+  .star-1 {
+    top: 5%;
+    left: 10%;
+  }
+  
+  .star-2 {
+    top: 15%;
+    right: 15%;
+  }
+  
+  .star-3 {
+    bottom: 5%;
+    left: 20%;
+  }
+  
+  .star-4 {
+    top: 3%;
+    right: 10%;
+  }
+  
+  .star-5 {
+    bottom: 3%;
+    right: 25%;
+  }
+  
+  .star-6 {
+    top: 60%;
+    left: 3%;
+  }
+  
+  /* Scale down hero background image on mobile */
+  #eligibility > div.bg-cover {
+    background-size: 180% auto !important;
+  }
 }

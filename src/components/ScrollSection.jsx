@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
 
 export function ScrollSection({ children, className = '' }) {
   const ref = useRef(null);
@@ -20,6 +20,34 @@ export function ScrollSection({ children, className = '' }) {
 
 export function ScrollFade({ children, delay = 0, className = '' }) {
   const ref = useRef(null);
+  const [currentDelay, setCurrentDelay] = useState(delay);
+  const hasAnimated = useRef(false);
+
+  useEffect(() => {
+    const element = ref.current;
+    if (!element) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !hasAnimated.current) {
+            hasAnimated.current = true;
+            // After delay is applied once, set it to 0 for future animations
+            setTimeout(() => {
+              setCurrentDelay(0);
+            }, delay * 1000 + 100);
+          }
+        });
+      },
+      { threshold: 0.1, margin: '-50px' }
+    );
+
+    observer.observe(element);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, [delay]);
 
   return (
     <motion.div
@@ -28,7 +56,7 @@ export function ScrollFade({ children, delay = 0, className = '' }) {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: false, margin: '-50px' }}
-      transition={{ duration: 0.8, delay }}
+      transition={{ duration: 0.8, delay: currentDelay }}
     >
       {children}
     </motion.div>

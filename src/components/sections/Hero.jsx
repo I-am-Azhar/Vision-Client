@@ -5,15 +5,12 @@ import heroImage from "../../assets/hero.png"
 
 function Hero() {
   return (
-    <section id="eligibility" className="h-screen flex items-center justify-center relative overflow-hidden">
+    <section id="eligibility" className="min-h-[60vh] md:min-h-screen flex items-center justify-center relative overflow-hidden pt-6 pb-0 md:py-0">
       {/* Germany Flag Overlay */}
       <div 
-        className="absolute inset-0 z-0 opacity-20"
+        className="absolute inset-0 z-0 opacity-20 bg-cover bg-center bg-no-repeat sm:bg-cover"
         style={{
           backgroundImage: `url(${heroImage})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
         }}
       />
 
@@ -65,14 +62,14 @@ function Hero() {
       
       {/* Content Container */}
       <motion.div 
-        className="relative z-10 text-center px-4 md:px-8 max-w-4xl mx-auto"
+        className="relative z-10 text-center px-4 md:px-8 max-w-4xl mx-auto py-8 md:py-0"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: 'easeOut' }}
       >
         {/* Headline */}
         <motion.h1 
-          className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight"
+          className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 md:mb-6 leading-tight"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
@@ -85,35 +82,35 @@ function Hero() {
         
         {/* Subheadline */}
         <motion.div 
-          className="mb-8 md:mb-10"
+          className="mb-6 md:mb-10"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          <p className="text-base md:text-lg lg:text-xl text-white/90 mb-2">
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/90 mb-2 px-2">
             No IELTS • Work from Day 1 • Age 22–45 • 1-Year Extendable Visa
           </p>
-          <div className="w-24 md:w-32 h-0.5 mx-auto bg-gradient-to-r from-transparent via-orange-500 to-transparent"></div>
+          <div className="w-20 sm:w-24 md:w-32 h-0.5 mx-auto bg-gradient-to-r from-transparent via-orange-500 to-transparent"></div>
         </motion.div>
         
         {/* CTA Buttons */}
         <motion.div 
-          className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
+          className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center mb-2 md:mb-12"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
         >
           <Button 
             variant="default" 
-            size="lg"
-            className="w-full sm:w-auto min-w-[200px] text-base font-semibold"
+            size="sm"
+            className="w-auto sm:w-auto sm:h-14 h-10 sm:px-6 px-3 sm:py-3 py-2 text-xs sm:text-base font-semibold"
           >
             Chat On WhatsApp
           </Button>
           <Button 
             variant="outline" 
-            size="lg"
-            className="w-full sm:w-auto min-w-[200px] text-base font-semibold"
+            size="sm"
+            className="w-auto sm:w-auto sm:h-14 h-10 sm:px-6 px-3 sm:py-3 py-2 text-xs sm:text-base font-semibold"
           >
             Check Your Eligibility →
           </Button>
@@ -122,12 +119,12 @@ function Hero() {
       
       {/* Animated Badge - Bottom Corner */}
       <motion.div 
-        className="absolute bottom-8 right-8 z-10"
+        className="absolute top-4 bottom-auto right-4 sm:bottom-8 sm:top-auto sm:right-8 z-10"
         initial={{ opacity: 0, scale: 0 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8, delay: 0.8 }}
       >
-        <Badge variant="default" className="shadow-2xl animate-pulse">
+        <Badge variant="default" className="shadow-2xl animate-pulse text-[10px] sm:text-sm py-1 sm:py-2 px-2 sm:px-4">
           🔥 New Batches Starting Soon!
         </Badge>
       </motion.div>
