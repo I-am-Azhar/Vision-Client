@@ -3,16 +3,27 @@ import { Button } from './ui/button';
 
 function StickyOfferBar() {
   const [timeLeft, setTimeLeft] = useState('');
+  const [minutes, setMinutes] = useState('');
+  const [seconds, setSeconds] = useState('');
   const [isVisible, setIsVisible] = useState(false);
   const [shouldAnimate, setShouldAnimate] = useState(false);
   const [shouldPulse, setShouldPulse] = useState(false);
   const [shouldJerk, setShouldJerk] = useState(false);
+  const [timerEnded, setTimerEnded] = useState(false);
 
   useEffect(() => {
     const getDeadline = () => {
       const stored = localStorage.getItem('offerDeadline');
       if (stored) {
-        return parseInt(stored);
+        const storedDeadline = parseInt(stored);
+        const now = Date.now();
+        // If stored deadline is in the past, reset it
+        if (storedDeadline <= now) {
+          const deadline = Date.now() + 30 * 60 * 1000;
+          localStorage.setItem('offerDeadline', deadline.toString());
+          return deadline;
+        }
+        return storedDeadline;
       }
       const deadline = Date.now() + 30 * 60 * 1000; // 30 minutes from now
       localStorage.setItem('offerDeadline', deadline.toString());
@@ -26,6 +37,7 @@ function StickyOfferBar() {
 
       if (difference <= 0) {
         setTimeLeft('00:00');
+        setTimerEnded(true);
         return;
       }
 
@@ -37,6 +49,8 @@ function StickyOfferBar() {
       const formattedSeconds = seconds.toString().padStart(2, '0');
 
       setTimeLeft(`${formattedMinutes}:${formattedSeconds}`);
+      setMinutes(formattedMinutes);
+      setSeconds(formattedSeconds);
     };
 
     // Calculate immediately
@@ -49,10 +63,10 @@ function StickyOfferBar() {
   }, []);
 
   useEffect(() => {
-    // Show the sticky bar after 5 seconds
+    // Show the sticky bar after 2 seconds
     const timer = setTimeout(() => {
       setIsVisible(true);
-    }, 5000);
+    }, 2000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -103,12 +117,25 @@ function StickyOfferBar() {
         <div className="flex items-center justify-between px-4 py-3 gap-2">
           {/* Timer Text */}
           <div className="flex flex-col flex-1">
-            <span className="text-[10px] font-semibold text-white">
-              Limited Offer Ends In
-            </span>
-            <span className="text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-yellow-400 tabular-nums">
-              {timeLeft}
-            </span>
+            {!timerEnded ? (
+              <>
+                <span className="text-[10px] font-semibold text-white/70">
+                  Limited Offer Ends In :
+                </span>
+                <div className="flex items-center gap-1.5 text-lg">
+                  <span className="text-white/40 line-through font-semibold">₹999/-</span>
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-yellow-400 font-bold">₹0/-</span>
+                  <span className="text-red-500/70 text-xl font-bold ml-2">{timeLeft}</span>
+                </div>
+              </>
+            ) : (
+              <>
+                <span className="text-[10px] font-semibold text-white/70">Limited Offer Ends In :</span>
+                <div className="flex items-center gap-2">
+                  <span className="text-2xl font-bold text-white">₹999/-</span>
+                </div>
+              </>
+            )}
           </div>
 
           {/* WhatsApp Button */}
@@ -135,12 +162,25 @@ function StickyOfferBar() {
         <div className="flex items-center justify-between px-6 py-4 gap-4">
           {/* Timer Text */}
           <div className="flex flex-col">
-            <span className="text-xs font-semibold text-white">
-              Limited Offer Ends In
-            </span>
-            <span className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-yellow-400 tabular-nums">
-              {timeLeft}
-            </span>
+            {!timerEnded ? (
+              <>
+                <span className="text-xs font-semibold text-white/70">
+                  Limited Offer Ends In :
+                </span>
+                <div className="flex items-center gap-2 text-2xl">
+                  <span className="text-white/40 line-through font-semibold">₹999/-</span>
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-yellow-400 font-bold">₹0/-</span>
+                  <span className="text-red-500/70 text-3xl font-bold ml-2">{timeLeft}</span>
+                </div>
+              </>
+            ) : (
+              <>
+                <span className="text-xs font-semibold text-white/70">Limited Offer Ends In :</span>
+                <div className="flex items-center gap-2">
+                  <span className="text-3xl font-bold text-white">₹999/-</span>
+                </div>
+              </>
+            )}
           </div>
 
           {/* WhatsApp Button */}
