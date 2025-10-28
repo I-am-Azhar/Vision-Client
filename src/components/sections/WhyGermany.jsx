@@ -99,12 +99,13 @@ function WhyGermany() {
                     <img
                       src={benefit.icon}
                       alt={benefit.title}
-                      className="w-full h-full object-contain brightness-[0.4] contrast-125 drop-shadow-[0_0_15px_rgba(251,146,60,0.6)]"
+                      className="w-full h-full object-contain brightness-[0.6]"
+                      style={{ mixBlendMode: 'screen' }}
                     />
                   </div>
 
                   {/* Title - Below icon on mobile, bottom on desktop */}
-                  <h3 className="text-center text-sm md:text-lg lg:text-xl xl:text-2xl font-semibold text-white flex-none">
+                  <h3 className="text-center text-sm md:text-lg lg:text-xl xl:text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-yellow-500 flex-none brightness-[0.9]">
                     {benefit.title}
                   </h3>
                 </div>
@@ -138,10 +139,11 @@ function WhyGermany() {
                     <img
                       src={benefit.icon}
                       alt={benefit.title}
-                      className="w-full h-full object-contain brightness-[0.4] contrast-125 drop-shadow-[0_0_15px_rgba(251,146,60,0.6)]"
+                      className="w-full h-full object-contain brightness-[0.6]"
+                      style={{ mixBlendMode: 'screen' }}
                     />
                   </div>
-                  <h3 className="text-center text-xl xl:text-2xl font-semibold text-white flex-none">
+                  <h3 className="text-center text-xl xl:text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-yellow-500 flex-none brightness-[0.9]">
                     {benefit.title}
                   </h3>
                 </div>
@@ -179,10 +181,11 @@ function WhyGermany() {
                     <img
                       src={benefit.icon}
                       alt={benefit.title}
-                      className="w-full h-full object-contain brightness-[0.4] contrast-125 drop-shadow-[0_0_15px_rgba(251,146,60,0.6)]"
+                      className="w-full h-full object-contain brightness-[0.6]"
+                      style={{ mixBlendMode: 'screen' }}
                     />
                   </div>
-                  <h3 className="text-center text-sm font-semibold text-white flex-none">
+                  <h3 className="text-center text-sm font-semibold text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-yellow-500 flex-none brightness-[0.9]">
                     {benefit.title}
                   </h3>
                 </div>
@@ -223,14 +226,16 @@ function WhyGermany() {
                           <img
                             src={benefit.icon}
                             alt={`${benefit.title} - option 1`}
-                            className="w-full h-full object-contain brightness-[0.4] contrast-125 drop-shadow-[0_0_15px_rgba(251,146,60,0.6)]"
+                            className="w-full h-full object-contain brightness-[0.6]"
+                      style={{ mixBlendMode: 'screen' }}
                           />
                         </div>
                         <div className="w-24 h-24 lg:w-28 lg:h-32 flex items-center justify-center">
                           <img
                             src={benefit.icon2}
                             alt={`${benefit.title} - option 2`}
-                            className="w-full h-full object-contain brightness-[0.4] contrast-125 drop-shadow-[0_0_15px_rgba(251,146,60,0.6)]"
+                            className="w-full h-full object-contain brightness-[0.6]"
+                      style={{ mixBlendMode: 'screen' }}
                           />
                         </div>
                       </div>
@@ -239,7 +244,8 @@ function WhyGermany() {
                         <img
                           src={benefit.icon2}
                           alt={benefit.title}
-                          className="w-full h-full object-contain brightness-[0.4] contrast-125 drop-shadow-[0_0_15px_rgba(251,146,60,0.6)]"
+                          className="w-full h-full object-contain brightness-[0.6]"
+                      style={{ mixBlendMode: 'screen' }}
                         />
                       </div>
                     </>
@@ -248,13 +254,13 @@ function WhyGermany() {
                       <img
                         src={benefit.icon}
                         alt={benefit.title}
-                        className="w-full h-full object-contain brightness-[0.4] contrast-125 drop-shadow-[0_0_15px_rgba(251,146,60,0.6)]"
+                        className="w-full h-full object-contain drop-shadow-[0_0_15px_rgba(251,146,60,0.6)]"
                       />
                     </div>
                   )}
 
                   {/* Title - Below icon on mobile, bottom on desktop */}
-                  <h3 className="text-center text-sm md:text-lg lg:text-xl xl:text-2xl font-semibold text-white flex-none">
+                  <h3 className="text-center text-sm md:text-lg lg:text-xl xl:text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-yellow-500 flex-none brightness-[0.9]">
                     {benefit.title}
                   </h3>
                 </div>
@@ -288,12 +294,13 @@ function WhyGermany() {
                     <img
                       src={benefit.icon}
                       alt={benefit.title}
-                      className="w-full h-full object-contain brightness-[0.4] contrast-125 drop-shadow-[0_0_15px_rgba(251,146,60,0.6)]"
+                      className="w-full h-full object-contain brightness-[0.6]"
+                      style={{ mixBlendMode: 'screen' }}
                     />
                   </div>
 
                   {/* Title - Below icon on mobile, bottom on desktop */}
-                  <h3 className="text-center text-xl xl:text-2xl font-semibold text-white flex-none">
+                  <h3 className="text-center text-xl xl:text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-yellow-500 flex-none brightness-[0.9]">
                     {benefit.title}
                   </h3>
                 </div>
@@ -307,9 +314,14 @@ function WhyGermany() {
         {/* WhatsApp CTA Button */}
         <ScrollFade delay={0}>
           <div className="flex justify-center mt-12">
-            <button className="w-full sm:w-auto px-6 py-3 md:px-8 md:py-4 text-base md:text-lg font-semibold text-white bg-green-600 hover:bg-green-700 rounded-lg transition-colors duration-200 shadow-lg">
+            <a 
+              href="https://wa.me/919059053439?text=Hi!%20I%27d%20like%20to%20get%20a%20free%20consultation%20about%20studying%20and%20working%20in%20Germany." 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-block w-full sm:w-auto px-6 py-3 md:px-8 md:py-4 text-base md:text-lg font-semibold text-white bg-green-600 hover:bg-green-700 rounded-lg transition-colors duration-200 shadow-lg text-center"
+            >
               💬 Get Free Consultation on WhatsApp
-            </button>
+            </a>
           </div>
         </ScrollFade>
       </div>

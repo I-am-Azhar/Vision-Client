@@ -104,15 +104,21 @@ function Hero() {
             variant="default" 
             size="sm"
             className="w-auto sm:w-auto sm:h-14 h-10 sm:px-6 px-3 sm:py-3 py-2 text-xs sm:text-base font-semibold"
+            asChild
           >
-            Chat On WhatsApp
+            <a href="https://wa.me/919059053439?text=Hello!%20I%20want%20to%20know%20more%20about%20working%20and%20studying%20in%20Germany." target="_blank" rel="noopener noreferrer">
+              Chat On WhatsApp
+            </a>
           </Button>
           <Button 
             variant="outline" 
             size="sm"
             className="w-auto sm:w-auto sm:h-14 h-10 sm:px-6 px-3 sm:py-3 py-2 text-xs sm:text-base font-semibold"
+            asChild
           >
-            Check Your Eligibility →
+            <a href="https://wa.me/919059053439?text=Hello!%20I%20want%20to%20check%20my%20eligibility%20for%20studying%20and%20working%20in%20Germany." target="_blank" rel="noopener noreferrer">
+              Check Your Eligibility →
+            </a>
           </Button>
         </motion.div>
       </motion.div>

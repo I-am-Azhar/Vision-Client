@@ -27,10 +27,9 @@ function LearnGerman() {
     },
   ];
 
-  const handleEnroll = (level) => {
+  const getWhatsappUrl = (level) => {
     const message = `I want to enroll in ${level} German course`;
-    const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, "_blank");
+    return `https://wa.me/919059053439?text=${encodeURIComponent(message)}`;
   };
 
   return (
@@ -104,12 +103,14 @@ function LearnGerman() {
 
                   {/* Enroll Button */}
                   <Button
-                    onClick={() => handleEnroll(level.name)}
                     variant="default"
                     size="default"
                     className="w-auto bg-green-600 hover:bg-green-700 text-white py-3 sm:py-4 md:py-6 px-6 sm:px-8 md:px-10 text-sm sm:text-base md:text-lg font-semibold mx-auto md:mx-0"
+                    asChild
                   >
-                    Enroll Now
+                    <a href={getWhatsappUrl(level.name)} target="_blank" rel="noopener noreferrer">
+                      Enroll Now
+                    </a>
                   </Button>
                 </div>
               </GlareHover>

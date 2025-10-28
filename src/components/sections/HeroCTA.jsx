@@ -125,9 +125,12 @@ function HeroCTA() {
             <Button 
               variant="default" 
               size="lg"
-              className="min-w-[280px] h-16 text-lg font-bold bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 shadow-[0_0_30px_rgba(34,197,94,0.5)] hover:shadow-[0_0_40px_rgba(34,197,94,0.7)] transition-all duration-300"
+              className="min-w-[200px] md:min-w-[280px] h-12 md:h-16 text-base md:text-lg font-bold bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 shadow-[0_0_30px_rgba(34,197,94,0.5)] hover:shadow-[0_0_40px_rgba(34,197,94,0.7)] transition-all duration-300"
+              asChild
             >
-              🟢 Chat on WhatsApp Now
+              <a href="https://wa.me/919059053439?text=I%27m%20ready%20to%20start%20my%20journey%20to%20Germany!%20How%20can%20we%20begin?" target="_blank" rel="noopener noreferrer">
+                🟢 Chat on WhatsApp Now
+              </a>
             </Button>
           </div>
         </ScrollFade>

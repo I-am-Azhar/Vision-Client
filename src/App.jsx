@@ -7,6 +7,7 @@ import Testimonials from './components/sections/Testimonials'
 import HeroCTA from './components/sections/HeroCTA'
 import Footer from './components/sections/Footer'
 import Squares from './components/ui/Squares'
+import StickyOfferBar from './components/StickyOfferBar'
 import { useLenis } from './lib/useLenis'
 
 function App() {
@@ -78,6 +79,9 @@ function App() {
       <Footer />
       
       </div>
+      
+      {/* Sticky Offer Bar - Mobile Only */}
+      <StickyOfferBar />
     </div>
   )
 }

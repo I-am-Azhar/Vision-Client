@@ -49,6 +49,43 @@ code {
   animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
+/* Size pulse animation for WhatsApp button */
+@keyframes scale-pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.animate-scale-pulse {
+  animation: scale-pulse 1.5s ease-in-out infinite;
+}
+
+/* Random jerk/shake animation for WhatsApp button */
+@keyframes random-jerk {
+  0% {
+    transform: translateX(0) rotate(0deg);
+  }
+  25% {
+    transform: translateX(-3px) rotate(-2deg);
+  }
+  50% {
+    transform: translateX(3px) rotate(2deg);
+  }
+  75% {
+    transform: translateX(-2px) rotate(-1deg);
+  }
+  100% {
+    transform: translateX(0) rotate(0deg);
+  }
+}
+
+.animate-random-jerk {
+  animation: random-jerk 0.8s ease-in-out infinite;
+}
+
 /* Button hover effects */
 button:hover {
   transform: translateY(-2px);
@@ -179,5 +216,10 @@ button {
   /* Scale down hero background image on mobile */
   #eligibility > div.bg-cover {
     background-size: 180% auto !important;
+  }
+  
+  /* Add bottom padding on mobile to account for sticky offer bar */
+  body {
+    padding-bottom: 4.5rem;
   }
 }
