@@ -149,6 +149,11 @@ function StickyOfferBar() {
               target="_blank" 
               rel="noopener noreferrer"
               className="flex items-center gap-1.5"
+              onClick={() => {
+                if (typeof fbq !== 'undefined') {
+                  fbq('track', 'Lead');
+                }
+              }}
             >
               <span>💬</span>
               <span>Chat on WhatsApp</span>
@@ -194,6 +199,11 @@ function StickyOfferBar() {
               target="_blank" 
               rel="noopener noreferrer"
               className="flex items-center gap-2"
+              onClick={() => {
+                if (typeof fbq !== 'undefined') {
+                  fbq('track', 'Lead');
+                }
+              }}
             >
               <span>💬</span>
               <span>Chat on WhatsApp</span>
