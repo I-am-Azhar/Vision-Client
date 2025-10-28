@@ -108,7 +108,16 @@ function LearnGerman() {
                     className="w-auto bg-green-600 hover:bg-green-700 text-white py-3 sm:py-4 md:py-6 px-6 sm:px-8 md:px-10 text-sm sm:text-base md:text-lg font-semibold mx-auto md:mx-0"
                     asChild
                   >
-                    <a href={getWhatsappUrl(level.name)} target="_blank" rel="noopener noreferrer">
+                    <a 
+                      href={getWhatsappUrl(level.name)} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      onClick={() => {
+                        if (typeof fbq !== 'undefined') {
+                          fbq('track', 'Lead');
+                        }
+                      }}
+                    >
                       Enroll Now
                     </a>
                   </Button>

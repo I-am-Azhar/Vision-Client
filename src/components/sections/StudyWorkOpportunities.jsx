@@ -79,6 +79,11 @@ function StudyWorkOpportunities() {
               href="https://wa.me/919059053439?text=I%27m%20interested%20in%20learning%20more%20about%20study%20and%20work%20opportunities%20in%20Germany.%20Can%20you%20help%20me%20get%20started?" 
               target="_blank" 
               rel="noopener noreferrer"
+              onClick={() => {
+                if (typeof fbq !== 'undefined') {
+                  fbq('track', 'Contact');
+                }
+              }}
               className="inline-block w-auto max-w-[90%] sm:w-auto px-6 py-3 md:px-8 md:py-4 text-sm sm:text-base md:text-lg font-semibold text-white bg-green-600 hover:bg-green-700 rounded-lg transition-colors duration-200 shadow-lg whitespace-nowrap"
             >
               <span className="sm:hidden">💬 WhatsApp Us</span>

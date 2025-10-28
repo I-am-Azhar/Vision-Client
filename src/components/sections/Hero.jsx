@@ -106,7 +106,16 @@ function Hero() {
             className="w-auto sm:w-auto sm:h-14 h-10 sm:px-6 px-3 sm:py-3 py-2 text-xs sm:text-base font-semibold"
             asChild
           >
-            <a href="https://wa.me/919059053439?text=Hello!%20I%20want%20to%20know%20more%20about%20working%20and%20studying%20in%20Germany." target="_blank" rel="noopener noreferrer">
+            <a 
+              href="https://wa.me/919059053439?text=Hello!%20I%20want%20to%20know%20more%20about%20working%20and%20studying%20in%20Germany." 
+              target="_blank" 
+              rel="noopener noreferrer"
+              onClick={() => {
+                if (typeof fbq !== 'undefined') {
+                  fbq('track', 'Contact');
+                }
+              }}
+            >
               Chat On WhatsApp
             </a>
           </Button>
@@ -116,7 +125,16 @@ function Hero() {
             className="w-auto sm:w-auto sm:h-14 h-10 sm:px-6 px-3 sm:py-3 py-2 text-xs sm:text-base font-semibold"
             asChild
           >
-            <a href="https://wa.me/919059053439?text=Hello!%20I%20want%20to%20check%20my%20eligibility%20for%20studying%20and%20working%20in%20Germany." target="_blank" rel="noopener noreferrer">
+            <a 
+              href="https://wa.me/919059053439?text=Hello!%20I%20want%20to%20check%20my%20eligibility%20for%20studying%20and%20working%20in%20Germany." 
+              target="_blank" 
+              rel="noopener noreferrer"
+              onClick={() => {
+                if (typeof fbq !== 'undefined') {
+                  fbq('track', 'Lead');
+                }
+              }}
+            >
               Check Your Eligibility →
             </a>
           </Button>

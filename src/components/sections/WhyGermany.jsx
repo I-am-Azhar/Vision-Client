@@ -318,6 +318,11 @@ function WhyGermany() {
               href="https://wa.me/919059053439?text=Hi!%20I%27d%20like%20to%20get%20a%20free%20consultation%20about%20studying%20and%20working%20in%20Germany." 
               target="_blank" 
               rel="noopener noreferrer"
+              onClick={() => {
+                if (typeof fbq !== 'undefined') {
+                  fbq('track', 'Contact');
+                }
+              }}
               className="inline-block w-full sm:w-auto px-6 py-3 md:px-8 md:py-4 text-base md:text-lg font-semibold text-white bg-green-600 hover:bg-green-700 rounded-lg transition-colors duration-200 shadow-lg text-center"
             >
               💬 Get Free Consultation on WhatsApp
