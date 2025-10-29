@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import { Analytics } from '@vercel/analytics/react'
+import { SpeedInsights } from '@vercel/speed-insights/react'
 import Hero from './components/sections/Hero'
 import WhyGermany from './components/sections/WhyGermany'
 import LearnGerman from './components/sections/LearnGerman'
@@ -84,6 +85,7 @@ function App() {
       {/* Sticky Offer Bar - Mobile Only */}
       <StickyOfferBar />
       <Analytics />
+      <SpeedInsights />
     </div>
   )
 }
